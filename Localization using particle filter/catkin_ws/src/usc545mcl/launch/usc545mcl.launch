@@ -1,0 +1,23 @@
+<launch>
+  <!-- Start map server, loading from file. -->
+  <node
+    pkg="map_server"
+    name="map_server"
+    type="map_server"
+    args="$(find usc545mcl)/data/map.yaml" />
+
+  <!-- Start lab logic code. -->
+  <node
+    pkg="usc545mcl"
+    name="usc545mcl"
+    type="usc545mcl.py"
+    args="$(find usc545mcl)/data/localization.bag"
+    output="screen" />
+
+  <!-- RViz -->
+  <node
+    pkg="rviz"
+    name="rviz"
+    type="rviz"
+    args="-d $(find usc545mcl)/rviz/config.rviz" />
+</launch>

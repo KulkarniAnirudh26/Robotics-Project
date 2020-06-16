@@ -1,0 +1,19 @@
+version: "2"
+
+networks:
+  ros:
+    driver: bridge
+
+services:
+  usc545mcl:
+    build: .
+    image: usc545mcl:latest
+    environment:
+      - DISPLAY=${DISPLAY}
+      - QT_X11_NO_MITSHM=1
+    volumes:
+      - ../catkin_ws:/opt/usc
+      - /tmp/.X11-unix:/tmp/.X11-unix
+    command: stdbuf -o L roslaunch usc545mcl usc545mcl.launch
+    networks:
+      - ros

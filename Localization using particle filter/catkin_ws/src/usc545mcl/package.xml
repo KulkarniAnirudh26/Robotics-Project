@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>usc545mcl</name>
+  <version>0.0.0</version>
+  <description>USC 545 Monte Carlo localization TA example.</description>
+  <maintainer email="dmillard@usc.edu">David Millard</maintainer>
+  <license>TODO</license>
+  <buildtool_depend>catkin</buildtool_depend>
+</package>
